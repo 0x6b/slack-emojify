@@ -1,5 +1,5 @@
 [package]
-name = "slack-emojify"
+name = "slack_emojify"
 version = "0.1.0"
 edition = "2021"
 description = "A quick and dirty Slack emoji to Unicode emoji converter."
