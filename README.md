@@ -1,4 +1,4 @@
-# slack-emojify
+# slack_emojify
 
 A quick and dirty Slack emoji (`:canned_food:`) to Unicode emoji (🥫) converter.
 
