@@ -1,0 +1,12 @@
+[package]
+name = "slack-emojify"
+version = "0.1.0"
+edition = "2021"
+description = "A quick and dirty Slack emoji to Unicode emoji converter."
+
+[dependencies]
+regex = "1.10"
+serde_json = "1.0"
+
+[workspace]
+members = ["xtask"]
