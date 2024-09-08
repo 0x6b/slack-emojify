@@ -1,14 +1,13 @@
 use std::{collections::BTreeMap, sync::LazyLock};
 
 use regex::Regex;
+use serde_json::from_slice;
 
-static DATA: &[u8] = include_bytes!("../assets/emoji.json");
 static TABLE: LazyLock<BTreeMap<&str, &str>> =
-    LazyLock::new(|| serde_json::from_slice::<BTreeMap<&str, &str>>(DATA).unwrap());
+    LazyLock::new(|| from_slice::<BTreeMap<_, _>>(include_bytes!("../assets/emoji.json")).unwrap());
 static RE_EMOJI: LazyLock<Regex> = LazyLock::new(|| Regex::new(r"(:[a-zA-Z0-9\-_+]+:)").unwrap());
 
 pub trait Emojify {
-    #[allow(dead_code)]
     fn emojify(&self) -> String;
 }
 
