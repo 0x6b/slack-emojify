@@ -8,7 +8,6 @@ static TABLE: LazyLock<BTreeMap<&str, &str>> =
 static RE_EMOJI: LazyLock<Regex> = LazyLock::new(|| Regex::new(r"(:[a-zA-Z0-9\-_+]+:)").unwrap());
 
 pub trait Emojify {
-    #[allow(dead_code)]
     fn emojify(&self) -> String;
 }
 
