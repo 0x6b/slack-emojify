@@ -52,11 +52,10 @@ async fn main() -> Result<()> {
                 .join("assets")
                 .join("emoji-data-version");
 
-            let current: Version = read_to_string(&local_version_file)
-                .await?
-                .trim()
-                .to_string()
-                .parse()?;
+            let current: Version = match read_to_string(&local_version_file).await {
+                Ok(s) => s.trim().parse()?,
+                Err(_) => Version::new(0, 0, 0),
+            };
 
             let latest = get_latest_version().await?;
             if current == latest {
