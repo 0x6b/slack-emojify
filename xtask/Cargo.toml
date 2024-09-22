@@ -13,3 +13,6 @@ tokio = { version = "1.39.3", features = ["rt-multi-thread", "macros", "net", "f
 serde = { version = "1.0.209", features = ["derive"] }
 regex = "1.10.6"
 semver = { version = "1.0.23", features = ["serde"] }
+tracing = "0.1.40"
+tracing-subscriber = "0.3.18"
+log = "0.4.22"
